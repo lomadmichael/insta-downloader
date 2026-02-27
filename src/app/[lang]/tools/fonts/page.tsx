@@ -129,37 +129,74 @@ export default function FontsPage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-purple-50 to-white py-12">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+        <section className="relative overflow-hidden bg-gradient-to-br from-fuchsia-500 via-pink-500 to-rose-500 animate-gradient py-12 sm:py-16">
+          {/* Grid pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)",
+                backgroundSize: "40px 40px",
+              }}
+            />
+          </div>
+
+          {/* Floating orbs */}
+          <div className="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+            <Link
+              href={`/${locale}/tools`}
+              className="inline-flex items-center gap-1.5 px-3 py-1 mb-6 text-xs font-semibold text-white/90 bg-white/15 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/25 transition-colors"
+            >
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              {dict.tools.backToTools}
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
               {fonts.title}
             </h1>
-            <p className="text-gray-600 text-lg">{fonts.subtitle}</p>
+            <p className="text-white/75 text-lg">{fonts.subtitle}</p>
           </div>
         </section>
 
         {/* Input Section */}
-        <section className="max-w-3xl mx-auto px-4 py-8">
-          <label
-            htmlFor="font-input"
-            className="block text-sm font-medium text-gray-700 mb-2"
-          >
-            {fonts.inputLabel}
-          </label>
-          <input
-            id="font-input"
-            type="text"
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            placeholder={fonts.inputPlaceholder}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl text-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-shadow"
-          />
-        </section>
+        <div className="max-w-3xl mx-auto px-4 -mt-6 relative z-10">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 sm:p-8">
+            <label
+              htmlFor="font-input"
+              className="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              {fonts.inputLabel}
+            </label>
+            <input
+              id="font-input"
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder={fonts.inputPlaceholder}
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-lg bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/20 focus:border-fuchsia-500 transition-all"
+            />
+          </div>
+        </div>
 
         {/* Results Section */}
         {inputText.trim() && (
-          <section className="max-w-3xl mx-auto px-4 pb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <section className="max-w-3xl mx-auto px-4 py-8">
+            <h2 className="text-lg font-bold text-gray-900 mb-4">
               {fonts.resultLabel}
             </h2>
             <div className="grid gap-3">
@@ -170,10 +207,10 @@ export default function FontsPage() {
                 return (
                   <div
                     key={style.key}
-                    className="flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-xl px-5 py-4 hover:border-purple-200 hover:shadow-sm transition-all"
+                    className="flex items-center justify-between gap-4 bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md hover:border-fuchsia-100 transition-all duration-300"
                   >
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-medium text-purple-600 mb-1">
+                      <p className="text-xs font-bold text-fuchsia-600 mb-1 uppercase tracking-wide">
                         {styleNames[style.key]}
                       </p>
                       <p className="text-lg text-gray-900 truncate">
@@ -182,10 +219,10 @@ export default function FontsPage() {
                     </div>
                     <button
                       onClick={() => handleCopy(converted, style.key)}
-                      className={`shrink-0 px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                      className={`shrink-0 px-4 py-2 text-sm font-semibold rounded-xl transition-all ${
                         isCopied
                           ? "bg-green-100 text-green-700"
-                          : "bg-purple-100 text-purple-700 hover:bg-purple-200"
+                          : "bg-fuchsia-50 text-fuchsia-700 hover:bg-fuchsia-100"
                       }`}
                     >
                       {isCopied ? fonts.copied : fonts.copy}
@@ -198,36 +235,56 @@ export default function FontsPage() {
         )}
 
         {/* How to Use Section */}
-        <section className="max-w-3xl mx-auto px-4 py-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            {fonts.howToTitle}
-          </h2>
-          <div className="space-y-4">
-            {[fonts.howToStep1, fonts.howToStep2, fonts.howToStep3].map(
-              (step, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <span className="shrink-0 w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold">
-                    {i + 1}
-                  </span>
-                  <p className="text-gray-700 pt-1">{step}</p>
-                </div>
-              )
-            )}
+        <section className="py-12 sm:py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="text-center mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-600">
+                {fonts.howToTitle}
+              </span>
+            </div>
+            <div className="space-y-4">
+              {[fonts.howToStep1, fonts.howToStep2, fonts.howToStep3].map(
+                (step, i) => (
+                  <div
+                    key={i}
+                    className="flex gap-4 items-start bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm"
+                  >
+                    <span className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white flex items-center justify-center text-sm font-bold">
+                      {i + 1}
+                    </span>
+                    <p className="text-gray-700 pt-1">{step}</p>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </section>
 
         {/* Note */}
         <section className="max-w-3xl mx-auto px-4 pb-10">
-          <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm text-amber-800">
-            {fonts.note}
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl px-6 py-5 text-sm text-amber-800 flex items-start gap-3">
+            <svg
+              className="w-5 h-5 shrink-0 text-amber-500 mt-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v2m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
+              />
+            </svg>
+            <span>{fonts.note}</span>
           </div>
         </section>
 
         {/* Back Link */}
-        <section className="max-w-3xl mx-auto px-4 pb-12">
+        <section className="max-w-3xl mx-auto px-4 pb-12 text-center">
           <Link
             href={`/${locale}/tools`}
-            className="inline-flex items-center gap-1 text-sm text-purple-600 hover:text-purple-800 transition-colors"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-semibold text-fuchsia-700 bg-fuchsia-50 rounded-full hover:bg-fuchsia-100 transition-colors"
           >
             <svg
               className="w-4 h-4"

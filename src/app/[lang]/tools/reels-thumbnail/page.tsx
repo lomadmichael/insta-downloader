@@ -110,40 +110,56 @@ export default function ReelsThumbnailPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-purple-50 to-white py-12">
-          <div className="max-w-3xl mx-auto px-4">
+        <section className="relative overflow-hidden bg-gradient-to-br from-rose-500 via-red-500 to-orange-500 animate-gradient py-12 sm:py-16">
+          {/* Floating orbs */}
+          <div className="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl pointer-events-none" />
+          {/* Grid pattern */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4">
             <Link
               href={`/${locale}/tools`}
-              className="inline-flex items-center text-sm text-purple-600 hover:text-purple-800 transition-colors mb-6"
+              className="inline-flex items-center gap-1.5 text-sm text-white/90 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 hover:bg-white/25 transition-colors mb-6"
             >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
               {dict.tools.backToTools}
             </Link>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-2">
               {dict.tools.reelsThumbnail.title}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-white/75 text-base sm:text-lg">
               {dict.tools.reelsThumbnail.subtitle}
             </p>
           </div>
         </section>
 
         {/* Tool Section */}
-        <section className="py-8">
-          <div className="max-w-3xl mx-auto px-4 space-y-6">
+        <div className="max-w-3xl mx-auto px-4 -mt-6 relative z-10">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 sm:p-8 space-y-6">
             {/* URL Input */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
               <input
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder={dict.tools.reelsThumbnail.inputPlaceholder}
                 disabled={loading}
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-colors disabled:opacity-50"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={loading || !url.trim()}
-                className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                className="bg-gradient-to-br from-rose-500 to-red-500 text-white font-semibold rounded-xl shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 px-6 py-3 transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none shrink-0"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -173,15 +189,19 @@ export default function ReelsThumbnailPage() {
 
             {/* Error */}
             {error && (
-              <div className="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
-                {error}
+              <div className="flex items-start gap-3 rounded-2xl bg-red-50 border border-red-200 px-5 py-4 text-sm text-red-700">
+                <svg className="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <circle cx="12" cy="12" r="10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01" />
+                </svg>
+                <span>{error}</span>
               </div>
             )}
 
             {/* Thumbnail Preview */}
             {thumbnailUrl && (
-              <div className="space-y-4">
-                <div className="rounded-xl overflow-hidden border border-gray-200 bg-gray-50">
+              <div className="space-y-5">
+                <div className="rounded-2xl overflow-hidden border border-gray-100 bg-gray-50 shadow-lg">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`/api/proxy?url=${encodeURIComponent(thumbnailUrl)}`}
@@ -194,7 +214,7 @@ export default function ReelsThumbnailPage() {
                 <div className="flex justify-center">
                   <button
                     onClick={handleDownload}
-                    className="inline-flex items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-semibold bg-green-600 text-white hover:bg-green-700 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 bg-gradient-to-br from-green-500 to-emerald-500 text-white rounded-xl px-6 py-3 font-semibold shadow-lg shadow-green-500/25 hover:shadow-green-500/40 active:scale-[0.98] transition-all"
                   >
                     <svg
                       className="w-4 h-4"
@@ -215,14 +235,16 @@ export default function ReelsThumbnailPage() {
               </div>
             )}
           </div>
-        </section>
+        </div>
 
         {/* How to Use Section */}
-        <section className="py-10 bg-gray-50">
+        <section className="py-12 sm:py-16 bg-gray-50/50">
           <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
-              {dict.tools.reelsThumbnail.howToTitle}
-            </h2>
+            <div className="text-center mb-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-rose-600">
+                {dict.tools.reelsThumbnail.howToTitle}
+              </span>
+            </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {[
                 dict.tools.reelsThumbnail.howToStep1,
@@ -231,14 +253,16 @@ export default function ReelsThumbnailPage() {
               ].map((step, index) => (
                 <div
                   key={index}
-                  className="flex gap-3 rounded-xl bg-white p-4 shadow-sm border border-gray-100"
+                  className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
                 >
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </span>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {step}
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <span className="flex-shrink-0 bg-gradient-to-br from-rose-500 to-red-500 text-white w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold">
+                      {index + 1}
+                    </span>
+                    <p className="text-sm text-gray-700 leading-relaxed pt-1">
+                      {step}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
