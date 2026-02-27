@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "@/lib/faq-data";
+import { useDictionary } from "@/i18n/use-dictionary";
 
 export default function FAQ() {
+  const dict = useDictionary();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -14,10 +15,10 @@ export default function FAQ() {
     <section className="py-16">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-10">
-          자주 묻는 질문
+          {dict.faq.title}
         </h2>
         <div className="space-y-3">
-          {faqs.map((faq, index) => (
+          {dict.faq.items.map((faq, index) => (
             <div
               key={index}
               className="border border-gray-200 rounded-xl overflow-hidden"

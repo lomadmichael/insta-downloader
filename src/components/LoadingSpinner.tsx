@@ -1,4 +1,9 @@
+"use client";
+
+import { useDictionary } from "@/i18n/use-dictionary";
+
 export default function LoadingSpinner() {
+  const dict = useDictionary();
   return (
     <div className="flex flex-col items-center justify-center py-16">
       <svg
@@ -20,7 +25,7 @@ export default function LoadingSpinner() {
           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
         />
       </svg>
-      <p className="text-gray-600 text-base">미디어를 가져오는 중...</p>
+      <p className="text-gray-600 text-base">{dict.loading.message}</p>
     </div>
   );
 }

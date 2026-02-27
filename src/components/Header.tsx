@@ -1,8 +1,15 @@
+"use client";
+
+import { useLocale } from "@/i18n/use-dictionary";
+import LanguageSwitcher from "./LanguageSwitcher";
+
 export default function Header() {
+  const lang = useLocale();
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-100">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center">
-        <a href="/" className="flex items-center gap-2">
+      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href={`/${lang}`} className="flex items-center gap-2">
           <svg
             className="w-7 h-7 text-purple-600"
             fill="none"
@@ -18,6 +25,7 @@ export default function Header() {
           </svg>
           <span className="text-lg font-bold text-gray-900">InstaDown</span>
         </a>
+        <LanguageSwitcher />
       </div>
     </header>
   );

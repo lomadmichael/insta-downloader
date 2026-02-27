@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     if (!url || typeof url !== "string") {
       return NextResponse.json(
-        { success: false, error: "URL을 입력해주세요." },
+        { success: false, error: "URL_REQUIRED" },
         { status: 400 }
       );
     }
@@ -20,9 +20,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, data });
   } catch (error) {
     const message =
-      error instanceof Error
-        ? error.message
-        : "알 수 없는 오류가 발생했습니다.";
+      error instanceof Error ? error.message : "UNKNOWN_ERROR";
 
     return NextResponse.json(
       { success: false, error: message },

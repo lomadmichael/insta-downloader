@@ -3,12 +3,15 @@
 import type { ExtractedPost } from "@/types/instagram";
 import MediaCard from "./MediaCard";
 import { getProxyUrl } from "@/lib/proxy-url";
+import { useDictionary } from "@/i18n/use-dictionary";
 
 interface ResultsSectionProps {
   result: ExtractedPost;
 }
 
 export default function ResultsSection({ result }: ResultsSectionProps) {
+  const dict = useDictionary();
+
   const handleDownloadAll = () => {
     result.media.forEach((item, index) => {
       setTimeout(() => {
@@ -45,12 +48,16 @@ export default function ResultsSection({ result }: ResultsSectionProps) {
               </p>
             )}
             <p className="text-sm text-gray-500">
-              {result.media.length}개의{" "}
-              {result.type === "carousel"
-                ? "미디어"
-                : result.type === "video"
-                  ? "영상"
-                  : "사진"}
+              {dict.results.mediaCount
+                .replace("{count}", String(result.media.length))
+                .replace(
+                  "{type}",
+                  result.type === "carousel"
+                    ? dict.results.media
+                    : result.type === "video"
+                      ? dict.results.video
+                      : dict.results.photo
+                )}
             </p>
           </div>
         </div>
@@ -60,7 +67,7 @@ export default function ResultsSection({ result }: ResultsSectionProps) {
             onClick={handleDownloadAll}
             className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors text-sm"
           >
-            모두 다운로드
+            {dict.results.downloadAll}
           </button>
         )}
       </div>

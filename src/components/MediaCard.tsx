@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { MediaItem } from "@/types/instagram";
 import { getProxyUrl } from "@/lib/proxy-url";
+import { useDictionary } from "@/i18n/use-dictionary";
 
 interface MediaCardProps {
   item: MediaItem;
@@ -12,6 +13,7 @@ interface MediaCardProps {
 }
 
 export default function MediaCard({ item, index, total, shortcode }: MediaCardProps) {
+  const dict = useDictionary();
   const [downloading, setDownloading] = useState(false);
 
   const handleDownload = async () => {
@@ -47,7 +49,7 @@ export default function MediaCard({ item, index, total, shortcode }: MediaCardPr
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={getProxyUrl(item.thumbnailUrl)}
-            alt={`미디어 ${index + 1}`}
+            alt={`${dict.results.media} ${index + 1}`}
             className="w-full h-full object-cover"
             loading="lazy"
           />
@@ -59,7 +61,7 @@ export default function MediaCard({ item, index, total, shortcode }: MediaCardPr
             item.type === "video" ? "bg-red-500" : "bg-blue-500"
           }`}
         >
-          {item.type === "video" ? "영상" : "사진"}
+          {item.type === "video" ? dict.results.video : dict.results.photo}
         </span>
 
         {/* Index badge for carousel */}
@@ -82,7 +84,7 @@ export default function MediaCard({ item, index, total, shortcode }: MediaCardPr
           disabled={downloading}
           className="w-full py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
         >
-          {downloading ? "다운로드 중..." : "다운로드"}
+          {downloading ? dict.results.downloading : dict.results.download}
         </button>
       </div>
     </div>

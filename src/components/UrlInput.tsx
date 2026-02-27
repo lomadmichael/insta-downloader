@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useDictionary } from "@/i18n/use-dictionary";
 
 interface UrlInputProps {
   onSubmit: (url: string) => void;
@@ -8,6 +9,7 @@ interface UrlInputProps {
 }
 
 export default function UrlInput({ onSubmit, loading }: UrlInputProps) {
+  const dict = useDictionary();
   const [url, setUrl] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,7 +36,7 @@ export default function UrlInput({ onSubmit, loading }: UrlInputProps) {
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="인스타그램 URL을 붙여넣으세요"
+            placeholder={dict.urlInput.placeholder}
             disabled={loading}
             className="flex-1 px-4 py-3.5 rounded-l-xl sm:rounded-l-xl rounded-r-none border-2 border-r-0 border-white/30 bg-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/60 text-base backdrop-blur-sm disabled:opacity-50"
           />
@@ -43,7 +45,7 @@ export default function UrlInput({ onSubmit, loading }: UrlInputProps) {
             onClick={handlePaste}
             disabled={loading}
             className="px-3 border-2 border-l-0 border-white/30 bg-white/10 text-white/80 hover:text-white hover:bg-white/20 transition-colors rounded-r-xl sm:rounded-r-none disabled:opacity-50"
-            title="붙여넣기"
+            title={dict.urlInput.paste}
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -61,10 +63,10 @@ export default function UrlInput({ onSubmit, loading }: UrlInputProps) {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
               </svg>
-              분석 중...
+              {dict.urlInput.analyzing}
             </span>
           ) : (
-            "다운로드"
+            dict.urlInput.download
           )}
         </button>
       </div>

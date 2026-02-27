@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "InstaDown - Instagram Photo & Reels Downloader | Free Instagram Saver",
+    "description": "Download Instagram photos, reels, and carousel posts for free. Just paste the URL to save original high-quality media. No sign-up required.",
+    "ogTitle": "InstaDown - Instagram Photo & Reels Downloader",
+    "ogDescription": "Paste an Instagram post URL to download photos and reels for free. No sign-up required!",
+    "keywords": [
+      "instagram downloader",
+      "download instagram photos",
+      "instagram reels download",
+      "save instagram videos",
+      "instagram photo saver",
+      "instagram video downloader",
+      "reels downloader",
+      "instagram carousel download",
+      "free instagram downloader",
+      "download reels"
+    ]
+  },
+  "hero": {
+    "titleLine1": "Instagram Photo & Reels",
+    "titleLine2": "Downloader",
+    "subtitle": "Paste an Instagram post URL to download photos and videos for free."
+  },
+  "urlInput": {
+    "placeholder": "Paste Instagram URL here",
+    "paste": "Paste",
+    "analyzing": "Analyzing...",
+    "download": "Download"
+  },
+  "loading": {
+    "message": "Fetching media..."
+  },
+  "results": {
+    "mediaCount": "{count} {type}",
+    "media": "media",
+    "video": "video",
+    "photo": "photo",
+    "downloadAll": "Download All",
+    "downloading": "Downloading...",
+    "download": "Download"
+  },
+  "howToUse": {
+    "title": "How to Use",
+    "step1Title": "Copy Link",
+    "step1Desc": "Tap the share button on an Instagram post and copy the link.",
+    "step2Title": "Paste URL",
+    "step2Desc": "Paste the copied URL into the input field above and click Download.",
+    "step3Title": "Save",
+    "step3Desc": "Click the download button on the photo or video you want to save."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How do I download Instagram photos?",
+        "answer": "Copy the link of the Instagram post you want to save by tapping the share button. Paste the URL into the InstaDown input field and click Download to save the original high-quality photo."
+      },
+      {
+        "question": "Can I download Instagram Reels videos?",
+        "answer": "Yes, you can download Instagram Reels videos. Simply copy the Reels post URL and paste it to save the video in MP4 format."
+      },
+      {
+        "question": "Can I save carousel posts with multiple photos?",
+        "answer": "Yes, you can download all photos and videos from carousel (slideshow) posts individually or save them all at once with the 'Download All' button."
+      },
+      {
+        "question": "Is this Instagram download service free?",
+        "answer": "Yes, InstaDown is completely free. You can use it without signing up or installing any app, with no download limits."
+      },
+      {
+        "question": "Can I download posts from private accounts?",
+        "answer": "No, only posts from public accounts can be downloaded. Posts from private accounts are only visible to their followers and cannot be downloaded."
+      },
+      {
+        "question": "What is the quality of downloaded photos?",
+        "answer": "Photos are downloaded in their original resolution as uploaded to Instagram. You get the highest quality images without any compression."
+      }
+    ]
+  },
+  "footer": {
+    "disclaimer1": "This service is independent and not affiliated with Instagram or Meta.",
+    "disclaimer2": "Only public posts can be downloaded. Downloaded content is copyrighted by the original creator."
+  },
+  "errors": {
+    "unknown": "An unknown error occurred.",
+    "network": "A network error occurred. Please check your internet connection.",
+    "urlRequired": "Please enter a URL."
+  },
+  "jsonLd": {
+    "appDescription": "Free web service to download Instagram photos, reels, and carousel posts",
+    "priceCurrency": "USD"
+  }
+}

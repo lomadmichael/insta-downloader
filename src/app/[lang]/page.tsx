@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { ExtractedPost, ExtractResponse } from "@/types/instagram";
+import { useDictionary } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ResultsSection from "@/components/ResultsSection";
@@ -12,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const dict = useDictionary();
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ExtractedPost | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -33,10 +35,10 @@ export default function Home() {
       if (data.success && data.data) {
         setResult(data.data);
       } else {
-        setError(data.error || "알 수 없는 오류가 발생했습니다.");
+        setError(data.error || dict.errors.unknown);
       }
     } catch {
-      setError("네트워크 오류가 발생했습니다. 인터넷 연결을 확인해주세요.");
+      setError(dict.errors.network);
     } finally {
       setLoading(false);
     }
