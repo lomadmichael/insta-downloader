@@ -9,6 +9,9 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "IBxCqMbKrAmUF_f1uB-d3AxjQe7xJVve1ue3HBMWSJ8",
+  },
   title: "InstaDown - 인스타그램 사진 & 릴스 다운로더 | 무료 인스타 저장",
   description:
     "인스타그램 사진, 릴스 영상, 캐러셀 게시물을 무료로 다운로드하세요. URL만 붙여넣으면 고화질 원본 저장이 가능합니다. 회원가입 불필요, 무료 인스타 다운로더.",
