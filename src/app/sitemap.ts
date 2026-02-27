@@ -28,5 +28,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${baseUrl}/ko/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/privacy`,
+          en: `${baseUrl}/en/privacy`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/privacy`,
+          en: `${baseUrl}/en/privacy`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/ko/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/terms`,
+          en: `${baseUrl}/en/terms`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/terms`,
+          en: `${baseUrl}/en/terms`,
+        },
+      },
+    },
   ];
 }

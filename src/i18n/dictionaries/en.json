@@ -78,14 +78,58 @@
       }
     ]
   },
-  "footer": {
-    "disclaimer1": "This service is independent and not affiliated with Instagram or Meta.",
-    "disclaimer2": "Only public posts can be downloaded. Downloaded content is copyrighted by the original creator."
-  },
   "errors": {
     "unknown": "An unknown error occurred.",
     "network": "A network error occurred. Please check your internet connection.",
     "urlRequired": "Please enter a URL."
+  },
+  "footer": {
+    "disclaimer1": "This service is independent and not affiliated with Instagram or Meta.",
+    "disclaimer2": "Only public posts can be downloaded. Downloaded content is copyrighted by the original creator.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 28, 2025",
+    "intro": "InstaDown (\"Service\") values your privacy and is committed to protecting your personal information in accordance with applicable laws. This Privacy Policy explains what information is collected when you use the Service and how it is used.",
+    "section1Title": "1. Information We Collect",
+    "section1Content": "Our Service does not require account registration and collects minimal information.\n\n- Instagram URLs submitted by users: These are temporarily processed for media extraction and are not stored.\n- Automatically collected information: Basic information such as IP address, browser type, and access time may be recorded in server logs for service operation.\n- Cookies: We may use cookies to enhance your experience and to serve advertisements.",
+    "section2Title": "2. How We Use Information",
+    "section2Content": "Collected information is used only for the following purposes:\n\n- Providing the Instagram media download service\n- Improving service quality and fixing errors\n- Analyzing service usage statistics\n- Serving personalized advertisements (Google AdSense)",
+    "section3Title": "3. Third-Party Services",
+    "section3Content": "This Service may use the following third-party services, each governed by their own privacy policies:\n\n- Google AdSense: Uses cookies to serve personalized advertisements. For more information, see Google's Privacy Policy (https://policies.google.com/privacy).\n- Google Analytics: May be used for analyzing service usage statistics.\n- Vercel: Used for hosting and delivering the Service.",
+    "section4Title": "4. Data Retention and Deletion",
+    "section4Content": "This Service does not store Instagram URLs submitted by users. URLs are discarded immediately after media extraction is complete. Server logs are retained for up to 90 days for security and service improvement purposes, after which they are automatically deleted.",
+    "section5Title": "5. Your Rights",
+    "section5Content": "You can change or delete cookie settings at any time through your browser settings. You may also refuse cookie collection. However, refusing cookies may limit some features of the Service.",
+    "section6Title": "6. Children's Privacy",
+    "section6Content": "This Service does not intentionally collect personal information from children under the age of 13. If we become aware that a child under 13 has provided personal information, we will promptly delete such information.",
+    "section7Title": "7. Changes to This Policy",
+    "section7Content": "This Privacy Policy may be updated to reflect changes in laws or the Service. Any changes will be posted on this page.",
+    "section8Title": "8. Contact Us",
+    "section8Content": "If you have any questions about this Privacy Policy, please contact us at:\n\nEmail: support@instadownload.me"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: February 28, 2025",
+    "intro": "These Terms of Service (\"Terms\") govern your use of InstaDown (\"Service\"). By using the Service, you agree to be bound by these Terms.",
+    "section1Title": "1. Service Overview",
+    "section1Content": "InstaDown is a free web service that allows you to download photos, videos, and other media from public Instagram posts. The Service can be used without registration and provides download functionality for publicly available content only.",
+    "section2Title": "2. Terms of Use",
+    "section2Content": "Users must comply with the following:\n\n- Use the Service only for lawful purposes.\n- Do not use it to infringe on others' copyrights, publicity rights, or other rights.\n- Do not engage in activities that disrupt the normal operation of the Service.\n- Do not use automated tools or bots for mass downloading.\n- Do not use downloaded content for unauthorized commercial purposes.",
+    "section3Title": "3. Copyright and Intellectual Property",
+    "section3Content": "The copyright of content posted on Instagram belongs to the original creator. This Service does not claim ownership of any downloaded content. Users are responsible for how they use downloaded content. Please comply with copyright laws when using downloaded material.",
+    "section4Title": "4. Disclaimer",
+    "section4Content": "This Service is provided \"as is\" without warranties of any kind regarding accuracy, completeness, or continued availability.\n\n- The Service may be temporarily or permanently discontinued due to changes in Instagram's policies.\n- We are not responsible for any legal issues arising from the use of downloaded content.\n- We are not liable for any data loss or damages that may occur during use of the Service.",
+    "section5Title": "5. Service Changes and Termination",
+    "section5Content": "We reserve the right to modify or discontinue the Service at any time without prior notice. We are not obligated to provide compensation for any damages resulting from service changes or termination.",
+    "section6Title": "6. Advertising",
+    "section6Content": "The Service may display third-party advertisements, including Google AdSense, to cover operational costs. Advertisement content does not reflect the views of the Service operator, and we are not responsible for transactions made through advertisements.",
+    "section7Title": "7. Changes to Terms",
+    "section7Content": "These Terms may be changed as needed. Updated Terms become effective upon posting on this page. Continued use of the Service after changes constitutes acceptance of the updated Terms.",
+    "section8Title": "8. Contact Us",
+    "section8Content": "If you have any questions about these Terms, please contact us at:\n\nEmail: support@instadownload.me"
   },
   "jsonLd": {
     "appDescription": "Free web service to download Instagram photos, reels, and carousel posts",
