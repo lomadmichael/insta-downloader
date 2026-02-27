@@ -2,8 +2,18 @@ import type { MetadataRoute } from "next";
 
 const baseUrl = "https://instadownload.me";
 
+const toolSlugs = [
+  "tools",
+  "tools/line-break",
+  "tools/blank-space",
+  "tools/fonts",
+  "tools/character-counter",
+  "tools/image-resizer",
+  "tools/reels-thumbnail",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/ko`,
       lastModified: new Date(),
@@ -77,4 +87,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
   ];
+
+  const toolPages: MetadataRoute.Sitemap = toolSlugs.flatMap((slug) => [
+    {
+      url: `${baseUrl}/ko/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: slug === "tools" ? 0.8 : 0.7,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/${slug}`,
+          en: `${baseUrl}/en/${slug}`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: slug === "tools" ? 0.8 : 0.7,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/${slug}`,
+          en: `${baseUrl}/en/${slug}`,
+        },
+      },
+    },
+  ]);
+
+  return [...staticPages, ...toolPages];
 }

@@ -10,6 +10,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import HowToUse from "@/components/HowToUse";
 import FAQ from "@/components/FAQ";
+import ToolsPromo from "@/components/ToolsPromo";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -60,6 +61,7 @@ export default function Home() {
 
         <HowToUse />
         <FAQ />
+        <ToolsPromo />
       </main>
       <Footer />
     </div>

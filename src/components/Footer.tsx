@@ -18,6 +18,13 @@ export default function Footer() {
         </p>
         <div className="flex items-center justify-center gap-4 mb-4">
           <Link
+            href={`/${locale}/tools`}
+            className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            {dict.nav.tools}
+          </Link>
+          <span className="text-xs text-gray-300">|</span>
+          <Link
             href={`/${locale}/privacy`}
             className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
           >
