@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://insta-downloader.vercel.app",
+    canonical: "https://instadownload.me",
   },
 };
 
@@ -65,7 +65,7 @@ export default function RootLayout({
     name: "InstaDown",
     description:
       "인스타그램 사진, 릴스 영상, 캐러셀 게시물을 무료로 다운로드할 수 있는 웹 서비스",
-    url: "https://insta-downloader.vercel.app",
+    url: "https://instadownload.me",
     applicationCategory: "UtilityApplication",
     operatingSystem: "All",
     offers: {
