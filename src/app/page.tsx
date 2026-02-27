@@ -8,6 +8,7 @@ import ResultsSection from "@/components/ResultsSection";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
 import HowToUse from "@/components/HowToUse";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -56,6 +57,7 @@ export default function Home() {
         {result && <ResultsSection result={result} />}
 
         <HowToUse />
+        <FAQ />
       </main>
       <Footer />
     </div>

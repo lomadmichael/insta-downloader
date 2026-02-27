@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import { faqJsonLd } from "@/lib/faq-data";
 import "./globals.css";
 
 const notoSansKR = Noto_Sans_KR({
@@ -75,10 +76,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqJsonLd)}
+        </script>
       </head>
       <body className={`${notoSansKR.variable} font-sans antialiased`}>
         {children}
