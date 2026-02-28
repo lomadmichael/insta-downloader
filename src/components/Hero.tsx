@@ -11,6 +11,24 @@ interface HeroProps {
 export default function Hero({ onSubmit, loading }: HeroProps) {
   const dict = useDictionary();
 
+  const steps = [
+    {
+      title: dict.howToUse.step1Title,
+      desc: dict.howToUse.step1Desc,
+      num: "1",
+    },
+    {
+      title: dict.howToUse.step2Title,
+      desc: dict.howToUse.step2Desc,
+      num: "2",
+    },
+    {
+      title: dict.howToUse.step3Title,
+      desc: dict.howToUse.step3Desc,
+      num: "3",
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 animate-gradient text-white">
       {/* Decorative floating orbs */}
@@ -30,7 +48,7 @@ export default function Hero({ onSubmit, loading }: HeroProps) {
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-4 py-20 sm:py-28 text-center">
+      <div className="relative max-w-5xl mx-auto px-4 pt-16 sm:pt-24 pb-10 sm:pb-14 text-center">
         {/* Instagram icon badge */}
         <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 text-sm font-medium text-white/90 border border-white/20">
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -49,7 +67,25 @@ export default function Hero({ onSubmit, loading }: HeroProps) {
         <p className="text-white/75 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
           {dict.hero.subtitle}
         </p>
+
         <UrlInput onSubmit={onSubmit} loading={loading} />
+
+        {/* HOW IT WORKS - inline compact */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {steps.map((step, i) => (
+              <div key={i} className="flex items-center gap-3 text-left">
+                <span className="shrink-0 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-sm font-bold text-white border border-white/20">
+                  {step.num}
+                </span>
+                <div>
+                  <div className="text-sm font-semibold text-white">{step.title}</div>
+                  <div className="text-xs text-white/50 leading-snug">{step.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

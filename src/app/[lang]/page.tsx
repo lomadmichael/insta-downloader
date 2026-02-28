@@ -8,7 +8,6 @@ import Hero from "@/components/Hero";
 import ResultsSection from "@/components/ResultsSection";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ErrorMessage from "@/components/ErrorMessage";
-import HowToUse from "@/components/HowToUse";
 import FAQ from "@/components/FAQ";
 import ToolsPromo from "@/components/ToolsPromo";
 import Footer from "@/components/Footer";
@@ -60,7 +59,6 @@ export default function Home() {
         {result && <ResultsSection result={result} />}
 
         <ToolsPromo />
-        <HowToUse />
         <FAQ />
       </main>
       <Footer />

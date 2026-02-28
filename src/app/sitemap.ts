@@ -12,6 +12,17 @@ const toolSlugs = [
   "tools/reels-thumbnail",
 ];
 
+const howToSlugs = [
+  "how-to",
+  "how-to/download",
+  "how-to/line-break",
+  "how-to/blank-space",
+  "how-to/fonts",
+  "how-to/character-counter",
+  "how-to/image-resizer",
+  "how-to/reels-thumbnail",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -115,5 +126,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticPages, ...toolPages];
+  const howToPages: MetadataRoute.Sitemap = howToSlugs.flatMap((slug) => [
+    {
+      url: `${baseUrl}/ko/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: slug === "how-to" ? 0.8 : 0.6,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/${slug}`,
+          en: `${baseUrl}/en/${slug}`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: slug === "how-to" ? 0.8 : 0.6,
+      alternates: {
+        languages: {
+          ko: `${baseUrl}/ko/${slug}`,
+          en: `${baseUrl}/en/${slug}`,
+        },
+      },
+    },
+  ]);
+
+  return [...staticPages, ...toolPages, ...howToPages];
 }
