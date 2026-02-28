@@ -59,9 +59,9 @@ export default function Home() {
 
         {result && <ResultsSection result={result} />}
 
+        <ToolsPromo />
         <HowToUse />
         <FAQ />
-        <ToolsPromo />
       </main>
       <Footer />
     </div>
