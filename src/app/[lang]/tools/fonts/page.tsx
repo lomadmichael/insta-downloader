@@ -1,309 +1,80 @@
-"use client";
+import type { Metadata } from "next";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { isValidLocale } from "@/i18n/config";
+import FontsClient from "./FontsClient";
 
-import { useState, useCallback } from "react";
-import Link from "next/link";
-import { useDictionary, useLocale } from "@/i18n/use-dictionary";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isValidLocale(lang)) return {};
+  const dict = await getDictionary(lang);
+  const baseUrl = "https://instadownload.me";
 
-interface FontStyle {
-  key: string;
-  upper?: number;
-  lower?: number;
-  digits?: number;
+  return {
+    title: dict.tools.fonts.metaTitle,
+    description: dict.tools.fonts.metaDescription,
+    openGraph: {
+      title: dict.tools.fonts.metaTitle,
+      description: dict.tools.fonts.metaDescription,
+      type: "website",
+      locale: lang === "ko" ? "ko_KR" : "en_US",
+      siteName: "InstaDown",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.tools.fonts.metaTitle,
+      description: dict.tools.fonts.metaDescription,
+    },
+    alternates: {
+      canonical: `${baseUrl}/${lang}/tools/fonts`,
+      languages: {
+        ko: `${baseUrl}/ko/tools/fonts`,
+        en: `${baseUrl}/en/tools/fonts`,
+      },
+    },
+  };
 }
 
-const FONT_STYLES: FontStyle[] = [
-  { key: "bold", upper: 0x1d400, lower: 0x1d41a, digits: 0x1d7ce },
-  { key: "italic", upper: 0x1d434, lower: 0x1d44e },
-  { key: "boldItalic", upper: 0x1d468, lower: 0x1d482 },
-  { key: "script", upper: 0x1d49c, lower: 0x1d4b6 },
-  { key: "boldScript", upper: 0x1d4d0, lower: 0x1d4ea },
-  { key: "fraktur", upper: 0x1d504, lower: 0x1d51e },
-  { key: "doubleStruck", upper: 0x1d538, lower: 0x1d552, digits: 0x1d7d8 },
-  { key: "sansSerif", upper: 0x1d5a0, lower: 0x1d5ba, digits: 0x1d7e2 },
-  { key: "sansSerifBold", upper: 0x1d5d4, lower: 0x1d5ee, digits: 0x1d7ec },
-  { key: "sansSerifItalic", upper: 0x1d608, lower: 0x1d622 },
-  { key: "monospace", upper: 0x1d670, lower: 0x1d68a, digits: 0x1d7f6 },
-  { key: "circled" },
-  { key: "squared" },
-  { key: "squaredNeg" },
-  { key: "fullwidth", upper: 0xff21, lower: 0xff41, digits: 0xff10 },
-];
+export default async function FontsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!isValidLocale(lang)) return null;
+  const dict = await getDictionary(lang);
+  const baseUrl = "https://instadownload.me";
 
-function convertToFont(text: string, style: FontStyle): string {
-  return Array.from(text)
-    .map((char) => {
-      const code = char.codePointAt(0)!;
-
-      // Circled style has special handling
-      if (style.key === "circled") {
-        if (code >= 65 && code <= 90) {
-          return String.fromCodePoint(0x24b6 + (code - 65));
-        }
-        if (code >= 97 && code <= 122) {
-          return String.fromCodePoint(0x24d0 + (code - 97));
-        }
-        if (code === 48) {
-          return String.fromCodePoint(0x24ea); // circled 0
-        }
-        if (code >= 49 && code <= 57) {
-          return String.fromCodePoint(0x2460 + (code - 49)); // circled 1-9
-        }
-        return char;
-      }
-
-      // Squared: uppercase only
-      if (style.key === "squared") {
-        if (code >= 65 && code <= 90) {
-          return String.fromCodePoint(0x1f130 + (code - 65));
-        }
-        return char;
-      }
-
-      // Squared Negative: uppercase only
-      if (style.key === "squaredNeg") {
-        if (code >= 65 && code <= 90) {
-          return String.fromCodePoint(0x1f170 + (code - 65));
-        }
-        return char;
-      }
-
-      // General offset-based styles
-      if (code >= 65 && code <= 90 && style.upper !== undefined) {
-        return String.fromCodePoint(style.upper + (code - 65));
-      }
-      if (code >= 97 && code <= 122 && style.lower !== undefined) {
-        return String.fromCodePoint(style.lower + (code - 97));
-      }
-      if (code >= 48 && code <= 57 && style.digits !== undefined) {
-        return String.fromCodePoint(style.digits + (code - 48));
-      }
-
-      return char;
-    })
-    .join("");
-}
-
-export default function FontsPage() {
-  const dict = useDictionary();
-  const locale = useLocale();
-  const [inputText, setInputText] = useState("");
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
-
-  const fonts = dict.tools.fonts;
-
-  const styleNames: Record<string, string> = {
-    bold: fonts.styles.bold,
-    italic: fonts.styles.italic,
-    boldItalic: fonts.styles.boldItalic,
-    script: fonts.styles.script,
-    boldScript: fonts.styles.boldScript,
-    fraktur: fonts.styles.fraktur,
-    doubleStruck: fonts.styles.doubleStruck,
-    sansSerif: fonts.styles.sansSerif,
-    sansSerifBold: fonts.styles.sansSerifBold,
-    sansSerifItalic: fonts.styles.sansSerifItalic,
-    monospace: fonts.styles.monospace,
-    circled: fonts.styles.circled,
-    squared: fonts.styles.squared,
-    squaredNeg: fonts.styles.squaredNeg,
-    fullwidth: fonts.styles.fullwidth,
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "InstaDown", item: `${baseUrl}/${lang}` },
+      { "@type": "ListItem", position: 2, name: dict.nav.tools, item: `${baseUrl}/${lang}/tools` },
+      { "@type": "ListItem", position: 3, name: dict.tools.fonts.title },
+    ],
   };
 
-  const handleCopy = useCallback(
-    async (text: string, key: string) => {
-      try {
-        await navigator.clipboard.writeText(text);
-        setCopiedKey(key);
-        setTimeout(() => setCopiedKey(null), 2000);
-      } catch {
-        // Fallback: ignore if clipboard API fails
-      }
-    },
-    []
-  );
+  const appJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: dict.tools.fonts.metaTitle,
+    description: dict.tools.fonts.metaDescription,
+    url: `${baseUrl}/${lang}/tools/fonts`,
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "All",
+    offers: { "@type": "Offer", price: "0", priceCurrency: lang === "ko" ? "KRW" : "USD" },
+    inLanguage: lang,
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-fuchsia-500 via-pink-500 to-rose-500 animate-gradient py-12 sm:py-16">
-          {/* Grid pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
-              }}
-            />
-          </div>
-
-          {/* Floating orbs */}
-          <div className="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000" />
-
-          <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-            <Link
-              href={`/${locale}/tools`}
-              className="inline-flex items-center gap-1.5 px-3 py-1 mb-6 text-xs font-semibold text-white/90 bg-white/15 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/25 transition-colors"
-            >
-              <svg
-                className="w-3.5 h-3.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              {dict.tools.backToTools}
-            </Link>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              {fonts.title}
-            </h1>
-            <p className="text-white/75 text-lg">{fonts.subtitle}</p>
-          </div>
-        </section>
-
-        {/* Input Section */}
-        <div className="max-w-3xl mx-auto px-4 -mt-6 relative z-10">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-xl p-6 sm:p-8">
-            <label
-              htmlFor="font-input"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
-              {fonts.inputLabel}
-            </label>
-            <input
-              id="font-input"
-              type="text"
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              placeholder={fonts.inputPlaceholder}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-lg bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/20 focus:border-fuchsia-500 transition-all"
-            />
-          </div>
-        </div>
-
-        {/* Results Section */}
-        {inputText.trim() && (
-          <section className="max-w-3xl mx-auto px-4 py-8">
-            <h2 className="text-lg font-bold text-gray-900 mb-4">
-              {fonts.resultLabel}
-            </h2>
-            <div className="grid gap-3">
-              {FONT_STYLES.map((style) => {
-                const converted = convertToFont(inputText, style);
-                const isCopied = copiedKey === style.key;
-
-                return (
-                  <div
-                    key={style.key}
-                    className="flex items-center justify-between gap-4 bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md hover:border-fuchsia-100 transition-all duration-300"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs font-bold text-fuchsia-600 mb-1 uppercase tracking-wide">
-                        {styleNames[style.key]}
-                      </p>
-                      <p className="text-lg text-gray-900 truncate">
-                        {converted}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => handleCopy(converted, style.key)}
-                      className={`shrink-0 px-4 py-2 text-sm font-semibold rounded-xl transition-all ${
-                        isCopied
-                          ? "bg-green-100 text-green-700"
-                          : "bg-fuchsia-50 text-fuchsia-700 hover:bg-fuchsia-100"
-                      }`}
-                    >
-                      {isCopied ? fonts.copied : fonts.copy}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )}
-
-        {/* How to Use Section */}
-        <section className="py-12 sm:py-16">
-          <div className="max-w-3xl mx-auto px-4">
-            <div className="text-center mb-8">
-              <span className="text-xs font-bold uppercase tracking-widest text-fuchsia-600">
-                {fonts.howToTitle}
-              </span>
-            </div>
-            <div className="space-y-4">
-              {[fonts.howToStep1, fonts.howToStep2, fonts.howToStep3].map(
-                (step, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-4 items-start bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm"
-                  >
-                    <span className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-fuchsia-500 to-pink-500 text-white flex items-center justify-center text-sm font-bold">
-                      {i + 1}
-                    </span>
-                    <p className="text-gray-700 pt-1">{step}</p>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* Note */}
-        <section className="max-w-3xl mx-auto px-4 pb-10">
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl px-6 py-5 text-sm text-amber-800 flex items-start gap-3">
-            <svg
-              className="w-5 h-5 shrink-0 text-amber-500 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 9v2m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
-              />
-            </svg>
-            <span>{fonts.note}</span>
-          </div>
-        </section>
-
-        {/* Back Link */}
-        <section className="max-w-3xl mx-auto px-4 pb-12 text-center">
-          <Link
-            href={`/${locale}/tools`}
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-semibold text-fuchsia-700 bg-fuchsia-50 rounded-full hover:bg-fuchsia-100 transition-colors"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            {dict.tools.backToTools}
-          </Link>
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }} />
+      <FontsClient />
+    </>
   );
 }
