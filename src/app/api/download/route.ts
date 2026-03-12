@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ALLOWED_CDN_HOSTS } from "@/lib/constants";
 
+export const runtime = "nodejs";
+export const preferredRegion = "icn1";
 export const maxDuration = 30;
 
 export async function GET(request: NextRequest) {

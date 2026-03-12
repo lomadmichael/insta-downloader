@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { extractInstagramMedia } from "@/lib/instagram";
 
+export const runtime = "nodejs";
+export const preferredRegion = "icn1";
 export const maxDuration = 30;
 
 export async function POST(request: Request) {
