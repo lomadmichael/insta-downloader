@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/line-break`,
         en: `${baseUrl}/en/tools/line-break`,
+        "x-default": `${baseUrl}/en/tools/line-break`,
       },
     },
   };

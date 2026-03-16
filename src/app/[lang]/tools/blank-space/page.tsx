@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/blank-space`,
         en: `${baseUrl}/en/tools/blank-space`,
+        "x-default": `${baseUrl}/en/tools/blank-space`,
       },
     },
   };

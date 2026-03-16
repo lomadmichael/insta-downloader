@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/image-resizer`,
         en: `${baseUrl}/en/tools/image-resizer`,
+        "x-default": `${baseUrl}/en/tools/image-resizer`,
       },
     },
   };

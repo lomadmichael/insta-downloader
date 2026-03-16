@@ -39,6 +39,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools`,
         en: `${baseUrl}/en/tools`,
+        "x-default": `${baseUrl}/en/tools`,
       },
     },
   };

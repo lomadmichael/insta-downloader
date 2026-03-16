@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko`,
           en: `${baseUrl}/en`,
+          "x-default": `${baseUrl}/en`,
         },
       },
     },
@@ -46,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko`,
           en: `${baseUrl}/en`,
+          "x-default": `${baseUrl}/en`,
         },
       },
     },
@@ -58,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/privacy`,
           en: `${baseUrl}/en/privacy`,
+          "x-default": `${baseUrl}/en/privacy`,
         },
       },
     },
@@ -70,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/privacy`,
           en: `${baseUrl}/en/privacy`,
+          "x-default": `${baseUrl}/en/privacy`,
         },
       },
     },
@@ -82,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/terms`,
           en: `${baseUrl}/en/terms`,
+          "x-default": `${baseUrl}/en/terms`,
         },
       },
     },
@@ -94,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/terms`,
           en: `${baseUrl}/en/terms`,
+          "x-default": `${baseUrl}/en/terms`,
         },
       },
     },
@@ -109,6 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/${slug}`,
           en: `${baseUrl}/en/${slug}`,
+          "x-default": `${baseUrl}/en/${slug}`,
         },
       },
     },
@@ -121,6 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/${slug}`,
           en: `${baseUrl}/en/${slug}`,
+          "x-default": `${baseUrl}/en/${slug}`,
         },
       },
     },
@@ -136,6 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/${slug}`,
           en: `${baseUrl}/en/${slug}`,
+          "x-default": `${baseUrl}/en/${slug}`,
         },
       },
     },
@@ -148,6 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ko: `${baseUrl}/ko/${slug}`,
           en: `${baseUrl}/en/${slug}`,
+          "x-default": `${baseUrl}/en/${slug}`,
         },
       },
     },

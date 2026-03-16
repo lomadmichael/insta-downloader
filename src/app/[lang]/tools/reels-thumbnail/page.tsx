@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/reels-thumbnail`,
         en: `${baseUrl}/en/tools/reels-thumbnail`,
+        "x-default": `${baseUrl}/en/tools/reels-thumbnail`,
       },
     },
   };

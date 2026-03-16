@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/character-counter`,
         en: `${baseUrl}/en/tools/character-counter`,
+        "x-default": `${baseUrl}/en/tools/character-counter`,
       },
     },
   };

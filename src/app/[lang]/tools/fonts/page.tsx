@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         ko: `${baseUrl}/ko/tools/fonts`,
         en: `${baseUrl}/en/tools/fonts`,
+        "x-default": `${baseUrl}/en/tools/fonts`,
       },
     },
   };
