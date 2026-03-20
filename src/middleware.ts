@@ -17,7 +17,7 @@ export function middleware(request: NextRequest) {
   // Redirect to locale-prefixed path
   const url = request.nextUrl.clone();
   url.pathname = `/${preferred}${pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(url, 308);
 }
 
 export const config = {
