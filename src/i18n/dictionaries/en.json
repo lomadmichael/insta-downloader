@@ -1,20 +1,21 @@
 {
   "meta": {
-    "title": "InstaDown - Instagram Photo & Reels Downloader | Free Instagram Saver",
-    "description": "Download Instagram photos, reels, and carousel posts for free. Just paste the URL to save original high-quality media. No sign-up required.",
-    "ogTitle": "InstaDown - Instagram Photo & Reels Downloader",
-    "ogDescription": "Paste an Instagram post URL to download photos and reels for free. No sign-up required!",
+    "title": "Download Instagram Photos & Reels Free - Save Instagram Videos Online | InstaDown",
+    "description": "Save Instagram photos, reels, and carousel posts for free without app. Paste the URL to download original high-quality Instagram media. No sign-up, no watermark.",
+    "ogTitle": "Download Instagram Photos & Reels Free | InstaDown",
+    "ogDescription": "Save Instagram photos and reels for free! Just paste the URL to download original high-quality media. No app needed.",
     "keywords": [
-      "instagram downloader",
       "download instagram photos",
+      "save instagram photos",
       "instagram reels download",
+      "instagram downloader",
       "save instagram videos",
       "instagram photo saver",
-      "instagram video downloader",
-      "reels downloader",
+      "download instagram reels online",
+      "save instagram photos without app",
+      "instagram video downloader free",
       "instagram carousel download",
-      "free instagram downloader",
-      "download reels"
+      "download reels without watermark"
     ]
   },
   "hero": {
@@ -48,35 +49,6 @@
     "step2Desc": "Paste the copied URL into the input field above and click Download.",
     "step3Title": "Save",
     "step3Desc": "Click the download button on the photo or video you want to save."
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "items": [
-      {
-        "question": "How do I download Instagram photos?",
-        "answer": "Copy the link of the Instagram post you want to save by tapping the share button. Paste the URL into the InstaDown input field and click Download to save the original high-quality photo."
-      },
-      {
-        "question": "Can I download Instagram Reels videos?",
-        "answer": "Yes, you can download Instagram Reels videos. Simply copy the Reels post URL and paste it to save the video in MP4 format."
-      },
-      {
-        "question": "Can I save carousel posts with multiple photos?",
-        "answer": "Yes, you can download all photos and videos from carousel (slideshow) posts individually or save them all at once with the 'Download All' button."
-      },
-      {
-        "question": "Is this Instagram download service free?",
-        "answer": "Yes, InstaDown is completely free. You can use it without signing up or installing any app, with no download limits."
-      },
-      {
-        "question": "Can I download posts from private accounts?",
-        "answer": "No, only posts from public accounts can be downloaded. Posts from private accounts are only visible to their followers and cannot be downloaded."
-      },
-      {
-        "question": "What is the quality of downloaded photos?",
-        "answer": "Photos are downloaded in their original resolution as uploaded to Instagram. You get the highest quality images without any compression."
-      }
-    ]
   },
   "errors": {
     "unknown": "An unknown error occurred.",
@@ -142,8 +114,8 @@
     "backToTools": "← Back to Tools",
     "lineBreak": {
       "title": "Instagram Line Break",
-      "metaTitle": "Instagram Line Break Generator - Add Line Breaks to Captions & Bio | InstaDown",
-      "metaDescription": "Add clean line breaks to your Instagram captions and bio. Use invisible special characters to keep your line breaks from disappearing.",
+      "metaTitle": "Instagram Line Break Not Working? Fix Caption & Bio Line Breaks | InstaDown",
+      "metaDescription": "Instagram line break not working? Fix disappearing line breaks in captions and bio with our free tool. Add clean, invisible line breaks that actually stay.",
       "subtitle": "Add clean line breaks to your Instagram captions and bio.",
       "inputLabel": "Enter your text",
       "inputPlaceholder": "Type your text here.\nPress Enter twice where you want blank lines.",
@@ -160,8 +132,8 @@
     },
     "blankSpace": {
       "title": "Instagram Blank Space",
-      "metaTitle": "Instagram Blank Space - Copy Invisible Characters for Instagram | InstaDown",
-      "metaDescription": "Copy special blank characters for Instagram. Add invisible spaces to your bio and captions for a clean, organized look.",
+      "metaTitle": "Instagram Blank Space Copy Paste - Invisible Characters for Bio | InstaDown",
+      "metaDescription": "Copy and paste blank spaces for Instagram bio and captions. Use invisible characters to add clean spacing and organize your Instagram profile.",
       "subtitle": "Copy special blank characters for your Instagram bio and captions.",
       "copyOne": "Copy 1 Space",
       "copyMultiple": "Copy {count} Spaces",
@@ -178,8 +150,8 @@
     },
     "fonts": {
       "title": "Instagram Font Generator",
-      "metaTitle": "Instagram Font Generator - Fancy Text & Special Fonts | InstaDown",
-      "metaDescription": "Convert text to fancy Unicode fonts for Instagram. Choose from bold, italic, script, and more styles for your bio and captions.",
+      "metaTitle": "Instagram Fonts Copy Paste - Aesthetic Bio Fonts & Fancy Text | InstaDown",
+      "metaDescription": "Instagram fonts copy and paste! Generate aesthetic, fancy text for your bio and captions. Bold, italic, cursive, and 20+ unique font styles ready to use.",
       "subtitle": "Convert your text to fancy Unicode fonts for Instagram.",
       "inputLabel": "Enter Text (English)",
       "inputPlaceholder": "Type your English text here",
@@ -211,8 +183,8 @@
     },
     "characterCounter": {
       "title": "Character Counter",
-      "metaTitle": "Instagram Character Counter - Caption, Bio & Hashtag Limit Checker | InstaDown",
-      "metaDescription": "Check Instagram character limits in real-time. Monitor caption (2,200), bio (150), and hashtag (30) limits to avoid exceeding them.",
+      "metaTitle": "Instagram Character Limit 2026 - Caption, Bio & Hashtag Counter | InstaDown",
+      "metaDescription": "What's the Instagram character limit? Caption: 2,200 chars, Bio: 150 chars, Hashtags: 30 max. Check your text length in real-time before posting.",
       "subtitle": "Check Instagram character limits in real-time.",
       "inputLabel": "Enter your text",
       "inputPlaceholder": "Type your text here...",
@@ -231,8 +203,8 @@
     },
     "imageResizer": {
       "title": "Image Resizer",
-      "metaTitle": "Instagram Image Resizer - Resize Photos for Instagram | InstaDown",
-      "metaDescription": "Resize your images to Instagram-optimized dimensions. Presets for feed, stories, reels, and profile pictures available.",
+      "metaTitle": "Instagram Photo Size Guide 2026 - Resize for Feed, Story & Reels | InstaDown",
+      "metaDescription": "Instagram post size 2026: Feed 1080x1080, Story 1080x1920, Reels 1080x1920. Resize your photos to the perfect Instagram dimensions with our free tool.",
       "subtitle": "Resize your images to Instagram-optimized dimensions.",
       "uploadLabel": "Upload Image",
       "uploadButton": "Choose Image",
@@ -256,8 +228,8 @@
     },
     "reelsThumbnail": {
       "title": "Reels Thumbnail Extractor",
-      "metaTitle": "Reels Thumbnail Extractor - Download Instagram Reels Cover Image | InstaDown",
-      "metaDescription": "Extract and download Instagram Reels thumbnails (cover images). Just paste the Reels URL to save the cover image.",
+      "metaTitle": "Instagram Reels Thumbnail Download - Extract Reels Cover Image | InstaDown",
+      "metaDescription": "Download Instagram Reels thumbnails and cover images for free. Just paste the Reels URL to extract and save the cover photo in high quality.",
       "subtitle": "Extract the thumbnail (cover image) from Instagram Reels.",
       "inputPlaceholder": "Paste Instagram Reels URL here",
       "extractButton": "Extract Thumbnail",
@@ -290,50 +262,50 @@
     "backToGuides": "← Back to Guides",
     "download": {
       "title": "How to Download Instagram Posts",
-      "metaTitle": "How to Download Instagram Posts - Photo & Reels Guide | InstaDown",
-      "metaDescription": "Learn how to download Instagram photos and reels for free. Save original high-quality media in 3 simple steps.",
+      "metaTitle": "How to Save Instagram Photos Without App - Download Guide 2026 | InstaDown",
+      "metaDescription": "How to save Instagram photos without an app? Download Instagram photos, reels, and videos for free in 3 simple steps. No sign-up, no watermark.",
       "subtitle": "Save Instagram photos and reels for free",
       "content": "## What is Instagram Downloading?\n\nInstagram doesn't provide an official way to download photos or videos. With InstaDown, you can save photos and reels from public posts in their original quality.\n\n## How to Download\n\n### Step 1: Copy the Link\nOn the Instagram app, tap the **share button (···)** on the post you want to save and select **'Copy Link'**.\n\n### Step 2: Paste the URL\nPaste the copied URL into the InstaDown input field and click **'Download'**.\n\n### Step 3: Save\nClick the download button on the extracted photo or video to save it. For carousel posts, use 'Download All' to save everything at once.\n\n## Supported Content\n\n- **Photo posts**: Download single photos in original quality\n- **Reels**: Save videos in MP4 format\n- **Carousels**: Download multiple photos/videos individually or in bulk\n\n## Important Notes\n\n- Only public posts can be downloaded.\n- Downloaded content is copyrighted by the original creator.\n- Unauthorized commercial use is prohibited."
     },
     "lineBreak": {
       "title": "How to Add Line Breaks on Instagram",
-      "metaTitle": "How to Add Line Breaks on Instagram - Caption & Bio Guide | InstaDown",
-      "metaDescription": "Learn how to fix disappearing line breaks in Instagram captions and bios.",
+      "metaTitle": "Instagram Line Break Not Working? How to Fix Caption Enter Key | InstaDown",
+      "metaDescription": "Why are Instagram line breaks disappearing? Learn why the enter key doesn't work in captions and how to fix it with invisible characters.",
       "subtitle": "Keep your line breaks in Instagram captions and bios",
       "content": "## Why Do Line Breaks Disappear?\n\nWhen typing text on Instagram, pressing Enter often results in line breaks disappearing. This happens because Instagram automatically removes consecutive blank lines.\n\n## The Solution\n\n### Method: Use InstaDown Line Break Tool\n1. Enter your text in the **Line Break tool**.\n2. Press Enter twice where you want line breaks.\n3. Click the **'Copy'** button.\n4. Paste into Instagram and your line breaks will be preserved.\n\n### How It Works\nThis tool inserts an **invisible special character (U+200B, Zero-Width Space)** between blank lines. Instagram recognizes this character, so the blank lines are not removed.\n\n## Tips\n\n- **Organize captions**: Separate content into paragraphs for better readability.\n- **Bio layout**: Arrange information neatly line by line.\n- **Lists**: Format items in a list for a clean look."
     },
     "blankSpace": {
       "title": "How to Use Instagram Blank Spaces",
-      "metaTitle": "How to Use Instagram Blank Spaces - Guide | InstaDown",
-      "metaDescription": "Learn how to use invisible blank characters to organize your Instagram bio and captions.",
+      "metaTitle": "How to Add Blank Space in Instagram Bio - Invisible Character Guide | InstaDown",
+      "metaDescription": "How to add blank space in Instagram bio? Copy invisible characters to create clean spacing in your bio and captions. Works on mobile and desktop.",
       "subtitle": "Guide to using special blank characters on Instagram",
       "content": "## What are Instagram Blank Spaces?\n\nRegular spacebar spaces are not recognized as blank lines on Instagram. Using a special Unicode character (U+3164, Hangul Filler) creates blank lines that Instagram preserves.\n\n## How to Use\n\n1. Select the number of blank spaces in the **Blank Space tool**.\n2. Click the **'Copy'** button.\n3. Paste into your Instagram bio or caption.\n\n## Use Cases\n\n- **Bio sections**: Separate name, job, contact info with blank lines\n- **Caption spacing**: Add space between text and hashtags\n- **Aesthetic layout**: Create a clean, organized profile look"
     },
     "fonts": {
       "title": "How to Use Instagram Fonts",
-      "metaTitle": "How to Use Instagram Fonts - Special Font Guide | InstaDown",
-      "metaDescription": "Learn how to use bold, italic, script, and other special fonts in Instagram bios and captions.",
+      "metaTitle": "How to Change Fonts on Instagram Bio - Aesthetic Font Styles | InstaDown",
+      "metaDescription": "How to change fonts on Instagram bio? Use our font generator to copy aesthetic, bold, italic, and cursive text styles for your bio and captions.",
       "subtitle": "Use special fonts on Instagram",
       "content": "## What are Instagram Special Fonts?\n\nInstagram doesn't offer font customization by default. However, using Unicode mathematical symbols and special characters, you can display various font styles.\n\n## How to Use\n\n1. Enter your English text in the **Font Generator**.\n2. Choose from 15 available styles.\n3. Click the **'Copy'** button.\n4. Paste into Instagram.\n\n## Available Styles\n\nBold, Italic, Script, Fraktur, Double-Struck, Sans-Serif, Monospace, Circled, Squared, Fullwidth, and more — **15 styles** total.\n\n## Notes\n\n- Only English letters and numbers are converted.\n- Some characters may display differently on certain devices."
     },
     "characterCounter": {
       "title": "How to Count Instagram Characters",
-      "metaTitle": "Instagram Character Counter Guide - Check Limits | InstaDown",
-      "metaDescription": "Learn how to check Instagram character limits for captions (2,200), bios (150), and hashtags (30).",
+      "metaTitle": "Instagram Character Limit Guide 2026 - Caption, Bio & Hashtag Limits | InstaDown",
+      "metaDescription": "Instagram character limit 2026: Captions allow 2,200 characters, bios 150, and up to 30 hashtags per post. Learn all the limits and how to check them.",
       "subtitle": "Check Instagram character limits",
       "content": "## Instagram Character Limits\n\n- **Caption**: Up to 2,200 characters\n- **Bio**: Up to 150 characters\n- **Hashtags**: Up to 30 per post\n- **Comments**: Up to 2,200 characters\n- **Username**: Up to 30 characters\n\n## How to Use\n\n1. Enter your text in the **Character Counter tool**.\n2. See real-time counts for characters, words, lines, hashtags, and mentions.\n3. Monitor progress bars showing how close you are to each limit.\n\n## Tips\n\n- Captions exceeding 2,200 characters cannot be posted.\n- More than 30 hashtags may disable commenting.\n- Keep your bio concise — 150 characters is quite short."
     },
     "imageResizer": {
       "title": "How to Resize Images for Instagram",
-      "metaTitle": "Instagram Image Resizer Guide - Optimal Sizes | InstaDown",
-      "metaDescription": "Learn the optimal image sizes for Instagram and how to resize your photos for feed, stories, and reels.",
+      "metaTitle": "Instagram Post Size 2026 - Feed, Story & Reels Dimensions Guide | InstaDown",
+      "metaDescription": "Instagram post size 2026: Feed 1080x1080, Story 1080x1920, Reels 1080x1920, Profile 320x320. Complete guide to Instagram image dimensions and aspect ratios.",
       "subtitle": "Guide to optimal Instagram image sizes",
       "content": "## Recommended Instagram Image Sizes\n\n- **Feed (Square)**: 1080 × 1080px\n- **Feed (Portrait)**: 1080 × 1350px\n- **Feed (Landscape)**: 1080 × 566px\n- **Story/Reels**: 1080 × 1920px\n- **Profile Picture**: 110 × 110px\n\n## How to Use\n\n1. Upload your image to the **Image Resizer**.\n2. Select a preset or enter custom dimensions.\n3. Preview and click **'Download'**.\n\n## Tips\n\n- Enable **Keep Ratio** to prevent image distortion.\n- Portrait photos (1080×1350) take up more feed space and get more attention.\n- Center important elements in profile photos since they're cropped to a circle."
     },
     "reelsThumbnail": {
       "title": "How to Extract Reels Thumbnails",
-      "metaTitle": "Reels Thumbnail Extraction Guide - Cover Image Download | InstaDown",
-      "metaDescription": "Learn how to extract and download Instagram Reels thumbnails (cover images).",
+      "metaTitle": "How to Download Reels Thumbnail - Extract Cover Image Free | InstaDown",
+      "metaDescription": "How to download Instagram Reels cover image? Extract and save Reels thumbnails in high quality for free. Just paste the Reels URL and download.",
       "subtitle": "Extract Reels cover images",
       "content": "## What is a Reels Thumbnail?\n\nA Reels thumbnail is the cover image that represents the video on your profile grid. It's useful for referencing or saving thumbnail designs from other creators.\n\n## How to Extract\n\n1. Copy the **share link** from an Instagram Reel.\n2. Paste the URL into the **Reels Thumbnail Extractor**.\n3. Click **'Extract Thumbnail'**.\n4. Download the extracted thumbnail.\n\n## Tips\n\n- Study popular Reels thumbnails for design inspiration.\n- Thumbnails significantly impact Reels view counts.\n- Text-based thumbnails tend to attract more viewer attention."
     },
@@ -353,6 +325,115 @@
       "reelsThumbnail": "Reels Thumbnail Guide",
       "reelsThumbnailDesc": "Extract cover images"
     }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How do I download Instagram photos?",
+        "answer": "Simply paste the Instagram post URL into InstaDown and click the download button. You can save original high-quality photos for free without installing any app."
+      },
+      {
+        "question": "Can I download Instagram Reels?",
+        "answer": "Yes, you can download Reels videos too. Paste the Reels URL and save the video in original quality."
+      },
+      {
+        "question": "Will the user be notified if I download their photo?",
+        "answer": "No, downloading through InstaDown does not send any notification to the post owner. It only works with public posts."
+      },
+      {
+        "question": "Can I download from private accounts?",
+        "answer": "No, InstaDown only supports public account posts. Private account content cannot be downloaded."
+      },
+      {
+        "question": "Do I need to sign up?",
+        "answer": "No sign-up required. InstaDown is completely free to use with no download limits."
+      }
+    ],
+    "lineBreak": [
+      {
+        "question": "Why are my Instagram line breaks not working?",
+        "answer": "Instagram automatically removes consecutive blank lines from captions. Regular enter keys create blank lines that disappear, so you need to use invisible special characters to keep your line breaks."
+      },
+      {
+        "question": "Can I add line breaks in my Instagram bio?",
+        "answer": "Yes, our line break tool works for bios too. Enter your text, convert it, and copy the result to paste into your Instagram bio."
+      },
+      {
+        "question": "Does this work on mobile?",
+        "answer": "Yes, it works on all mobile browsers. Copy the converted text and paste it directly into the Instagram app."
+      }
+    ],
+    "blankSpace": [
+      {
+        "question": "What is an Instagram blank space character?",
+        "answer": "It's an invisible Unicode character that Instagram doesn't remove, unlike regular spaces. This lets you create empty gaps in your bio and captions."
+      },
+      {
+        "question": "How do I copy the blank space?",
+        "answer": "Click the 'Copy' button in our tool and the blank character is automatically copied to your clipboard. Then paste it into Instagram using Ctrl+V or long-press on mobile."
+      },
+      {
+        "question": "Can I use multiple blank spaces?",
+        "answer": "Yes, you can copy and paste as many blank characters as you need to create multiple empty lines."
+      }
+    ],
+    "fonts": [
+      {
+        "question": "How do Instagram font generators work?",
+        "answer": "Unicode includes various styled characters beyond regular alphabets — bold, italic, cursive, etc. These are actual characters, not fonts, so they display correctly everywhere."
+      },
+      {
+        "question": "Do special fonts work with all languages?",
+        "answer": "Unicode special fonts only apply to Latin alphabets and numbers. Other scripts like Korean, Japanese, or Chinese characters won't be converted, but you can mix them."
+      },
+      {
+        "question": "Why can't some people see my special fonts?",
+        "answer": "Some older devices or browsers may not display certain Unicode characters properly. Most modern devices support them fully."
+      }
+    ],
+    "characterCounter": [
+      {
+        "question": "What is the Instagram caption character limit?",
+        "answer": "Instagram captions can be up to 2,200 characters long. However, only the first 125 characters are shown in the feed preview, so put important content first."
+      },
+      {
+        "question": "How many characters can an Instagram bio have?",
+        "answer": "Instagram bios have a 150 character limit. Emojis and special characters each count as one character."
+      },
+      {
+        "question": "How many hashtags can I use per post?",
+        "answer": "You can use up to 30 hashtags per post. If you exceed 30, your caption won't be published."
+      }
+    ],
+    "imageResizer": [
+      {
+        "question": "What is the best Instagram feed photo size?",
+        "answer": "The recommended sizes are: Square 1080×1080px, Portrait 1080×1350px, Landscape 1080×566px. Portrait photos take up the most feed space and get more engagement."
+      },
+      {
+        "question": "What size are Instagram Stories and Reels?",
+        "answer": "Both Instagram Stories and Reels use 1080×1920px (9:16 aspect ratio)."
+      },
+      {
+        "question": "Will resizing reduce image quality?",
+        "answer": "Our resizer maintains maximum quality while adjusting dimensions. However, enlarging a small image may reduce quality, so start with a high-resolution original."
+      }
+    ],
+    "reelsThumbnail": [
+      {
+        "question": "How do I extract a Reels thumbnail?",
+        "answer": "Copy the Reels URL, paste it into InstaDown's Reels Thumbnail Extractor, and click the extract button. The cover image will be automatically extracted."
+      },
+      {
+        "question": "What quality is the extracted thumbnail?",
+        "answer": "Thumbnails are extracted at the original resolution provided by Instagram, typically 1080×1920px high quality."
+      },
+      {
+        "question": "Can I extract thumbnails from other people's Reels?",
+        "answer": "Yes, you can extract thumbnails from any public account's Reels. Private accounts are not supported."
+      }
+    ]
   },
   "jsonLd": {
     "appDescription": "Free web service to download Instagram photos, reels, and carousel posts",

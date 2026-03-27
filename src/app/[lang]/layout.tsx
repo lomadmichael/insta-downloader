@@ -7,13 +7,17 @@ import { DictionaryProvider } from "@/i18n/use-dictionary";
 import "../globals.css";
 
 const notoSansKR = Noto_Sans_KR({
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-noto-sans-kr",
+  display: "swap",
 });
 
 const inter = Inter({
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export function generateStaticParams() {

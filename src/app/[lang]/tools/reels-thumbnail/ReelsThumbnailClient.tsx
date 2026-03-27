@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDictionary, useLocale } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 export default function ReelsThumbnailPage() {
   const dict = useDictionary();
@@ -270,6 +271,7 @@ export default function ReelsThumbnailPage() {
         </section>
       </main>
 
+      <FAQ faqKey="reelsThumbnail" />
       <Footer />
     </div>
   );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDictionary, useLocale } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const PRESETS: Record<string, { width: number; height: number }> = {
   feedSquare: { width: 1080, height: 1080 },
@@ -421,6 +422,7 @@ export default function ImageResizerPage() {
           </div>
         </div>
       </main>
+      <FAQ faqKey="imageResizer" />
       <Footer />
     </div>
   );

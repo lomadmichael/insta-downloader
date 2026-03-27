@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDictionary, useLocale } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const CAPTION_LIMIT = 2200;
 const BIO_LIMIT = 150;
@@ -219,6 +220,7 @@ export default function CharacterCounterPage() {
           </p>
         </div>
       </main>
+      <FAQ faqKey="characterCounter" />
       <Footer />
     </div>
   );

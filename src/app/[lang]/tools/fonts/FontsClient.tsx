@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDictionary, useLocale } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 interface FontStyle {
   key: string;
@@ -303,6 +304,7 @@ export default function FontsPage() {
           </Link>
         </section>
       </main>
+      <FAQ faqKey="fonts" />
       <Footer />
     </div>
   );

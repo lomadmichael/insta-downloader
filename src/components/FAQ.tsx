@@ -3,9 +3,14 @@
 import { useState } from "react";
 import { useDictionary } from "@/i18n/use-dictionary";
 
-export default function FAQ() {
+type FaqKey = "items" | "lineBreak" | "blankSpace" | "fonts" | "characterCounter" | "imageResizer" | "reelsThumbnail";
+
+export default function FAQ({ faqKey = "items" }: { faqKey?: FaqKey }) {
   const dict = useDictionary();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqItems = dict.faq[faqKey] as { question: string; answer: string }[];
+  if (!faqItems || faqItems.length === 0) return null;
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -23,7 +28,7 @@ export default function FAQ() {
           </h2>
         </div>
         <div className="space-y-3">
-          {dict.faq.items.map((faq, index) => {
+          {faqItems.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useDictionary, useLocale } from "@/i18n/use-dictionary";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const BLANK_CHAR = "\u3164";
 const QUICK_COUNTS = [1, 3, 5, 10];
@@ -225,6 +226,7 @@ export default function BlankSpacePage() {
         </div>
       </main>
 
+      <FAQ faqKey="blankSpace" />
       <Footer />
     </div>
   );
